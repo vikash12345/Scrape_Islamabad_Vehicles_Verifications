@@ -25,7 +25,7 @@
 // called "data.sqlite" in the current working directory which has at least a table
 // called "data".
 $Outfile	=	"Islamabad Vehicles.csv"
-$Alpha	=	["AB", "IDA"];
+$Alpha	=	array("AB", "IDA");
 $BaseURL	=	"http://islamabadexcise.gov.pk/VEH_REG/VEH_QUERY.asp?X=";
 $VisitLnk;
 $SaveAsCSV;
