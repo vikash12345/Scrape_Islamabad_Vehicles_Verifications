@@ -23,13 +23,16 @@
 // You can use whatever libraries you want: https://morph.io/documentation/php
 // All that matters is that your final data is written to an SQLite database
 // called "data.sqlite" in the current working directory which has at least a table
-// called "data".
+// called "data".3
+
+require 'scraperwiki.php';
+require 'scraperwiki/simple_html_dom.php';
 $Outfile	=	"Islamabad Vehicles.csv"
-$Alpha	=	array("AB", "IDA");
+$Alpha		=	array("AB","IDA");
 $BaseURL	=	"http://islamabadexcise.gov.pk/VEH_REG/VEH_QUERY.asp?X=";
-$VisitLnk;
-$SaveAsCSV;
-for ($outterloop = 0; $outterloop < $Alpha.length; $outterloop++) {
+
+for ($outterloop = 0; $outterloop < $Alpha.length; $outterloop++) 
+{
 		for ($innerloop = 100; $innerloop < 110; $innerloop++) {
 			$NewLink	=	$BaseURL . $Alpha[$outterloop] . '&Y=' . $innerloop;
             $html = file_get_html($NewURL);
