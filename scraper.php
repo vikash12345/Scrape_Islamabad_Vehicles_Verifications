@@ -31,9 +31,9 @@ $VisitLnk;
 $SaveAsCSV;
 for ($outterloop = 0; $outterloop < $Alpha.length; $outterloop++) {
 		for ($innerloop = 100; $innerloop < 110; $innerloop++) {
-			$NewLink	=	$BaseURL . $Alpha[$outterloop] . "&Y=" . $innerloop;
-            
-          echo "$NewLink";
+			$NewLink	=	$BaseURL . $Alpha[$outterloop] . '&Y=' . $innerloop;
+            $html = file_get_html($NewURL);
+          echo "$html";
             }
 		}
 	}
