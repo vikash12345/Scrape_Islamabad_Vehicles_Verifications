@@ -1,4 +1,4 @@
-<?
+//<?
 // This is a template for a PHP scraper on morph.io (https://morph.io)
 // including some code snippets below that you should find helpful
 
@@ -24,4 +24,19 @@
 // All that matters is that your final data is written to an SQLite database
 // called "data.sqlite" in the current working directory which has at least a table
 // called "data".
+$Outfile	=	"Islamabad Vehicles.csv"
+$Alpha	=	["AB", "IDA"];
+$BaseURL	=	"http://islamabadexcise.gov.pk/VEH_REG/VEH_QUERY.asp?X=";
+$VisitLnk;
+$SaveAsCSV;
+for ($outterloop = 0; $outterloop < $Alpha.length; $outterloop++) {
+		for ($innerloop = 100; $innerloop < 110; $innerloop++) {
+			$NewLink	=	$BaseURL + $Alpha[outterloop] + "&Y=" + $innerloop;
+            
+          echo "$NewLink";
+            }
+		}
+	}
+
+
 ?>
