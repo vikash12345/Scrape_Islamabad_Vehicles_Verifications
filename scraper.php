@@ -62,7 +62,9 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 				
 				
 				
-				scraperwiki::sqliteexecute("drop table vechile");
+			scraperwiki::sqliteexecute("drop table vechile");
+
+
 scraperwiki::sqliteexecute("create table if not exists vechile (`regno` string, `regdate` string, `maker` string, `model` string, `chas` string, `engine` string, `owner` string, `sw` string, `type` string, `link` string)"); #);
 scraperwiki::sqlitecommit();
 				
