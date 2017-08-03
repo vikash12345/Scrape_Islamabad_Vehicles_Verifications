@@ -57,42 +57,15 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 					echo $NewLink;
 					
 				}
-				
+				scraperwiki::sqliteexecute("create table if not exists vechile (`regno` string, `regdate` string, `maker` string, `model` string, `chas` string, `engine` string, `owner` string, `sw` string, `type` string, `link` string)"); #);
+
 				
 				
 				
 				
 
 
-scraperwiki::sqliteexecute("create table if not exists vechile (`regno` string, `regdate` string, `maker` string, `model` string, `chas` string, `engine` string, `owner` string, `sw` string, `type` string, `link` string)"); #);
-scraperwiki::sqlitecommit();
-				
-				
-				
-    scraperwiki::sqliteexecute("insert or replace into vechile values (:RegistrationNo, :RegDate, :Maker, :Model, :ChassisNo, :engine_no, :Owner, :sw, :type, :link)", 
-            array(  "RegNo"    => $reg_no, 
-                    "RegDate"     => $reg_date,
-                    "Maker"    => $maker,
-                    "Model"   => $model,
-                    "ChassisNo"   => $chassis_no,
-                    "EngineNo"   => $engine_no,
-                    "Owner"  => $owner,
-                    "SW"   => $sw,
-		    "Type"   => $type,
-                    "Link" => $NewLink
-            )
-    );
-}
-scraperwiki::sqlitecommit();
-				
-				
-			
-			
-		}
-		
-           
-	}
-	
+
 	
 ?>
 
