@@ -26,20 +26,47 @@
 // called "data".3
 
 require 'scraperwiki.php';
+require "simple_html_dom.php";
 require 'scraperwiki/simple_html_dom.php';
-$Outfile	=	"Islamabad Vehicles.csv"
-$Alpha		=	array("AB","IDA");
-$BaseURL	=	"http://islamabadexcise.gov.pk/VEH_REG/VEH_QUERY.asp?X=";
 
-for ($outterloop = 0; $outterloop < $Alpha.length; $outterloop++) 
-{
-		for ($innerloop = 100; $innerloop < 110; $innerloop++) {
-			$NewLink	=	$BaseURL . $Alpha[$outterloop] . '&Y=' . $innerloop;
-            $html = file_get_html($NewURL);
-          echo "$html";
-            }
+
+
+$Alpha	=	array('AB');
+$url = 'http://islamabadexcise.gov.pk/VEH_REG/VEH_QUERY.asp?X=';
+
+
+for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++) 
+	{
+		for ($innerloop = 101; $innerloop <102; $innerloop++) 
+		{
+			$NewLink	=	$url . $Alpha[$outterloop] . '&Y=' . $innerloop;
+			$html 		= file_get_html($NewLink);
+			foreach($html->find("/html/body/div/table/tbody/tr[1]/td/form/table/tbody/tr[7]/td/table/tbody") as $element)
+			{
+
+				if($element)
+				{
+					echo $reg_no 		= $element->find("tr/td[2]/font" ,1);
+					echo $reg_date 		= $element->find("tr/td[2]/font" ,2);
+					echo $maker 		= $element->find("tr/td[2]/font" ,4);
+					echo $model 		= $element->find("tr/td[2]/font" ,6);
+					echo $chassis_no	= $element->find("tr/td[2]/font" ,8);
+					echo $engine_no 	= $element->find("tr/td[2]/font" ,10);
+					echo $owner 		= $element->find("tr/td[2]/font" ,12);
+					echo $sw 		= $element->find("tr/td[2]/font" ,14);
+					echo $type 		= $element->find("tr/td[2]/font" ,16); 
+					echo $NewLink;
+					
+				}
+			}
+			
 		}
+		
+           
 	}
-
-
+	
+	
 ?>
+
+
+
