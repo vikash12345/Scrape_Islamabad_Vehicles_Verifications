@@ -57,12 +57,13 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 					echo $NewLink;
 					
 				}
-				scraperwiki::sqliteexecute("create table if not exists vechile (`regno` string, `regdate` string, `maker` string, `model` string, `chas` string, `engine` string, `owner` string, `sw` string, `type` string, `link` string)"); #);
 
 				
 				
 			}
 		}
+	scraperwiki::sqliteexecute("create table if not exists vechile (`regno` string, `regdate` string, `maker` string, `model` string, `chas` string, `engine` string, `owner` string, `sw` string, `type` string, `link` string)"); #);
+
 }
 				
 
