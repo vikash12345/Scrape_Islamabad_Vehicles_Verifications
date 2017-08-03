@@ -53,7 +53,7 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 					echo $engine_no 	= $element->find("tr/td[2]/font" ,10)->plaintext;
 					echo $owner 		= $element->find("tr/td[2]/font" ,12)->plaintext;
 					echo $sw 		= $element->find("tr/td[2]/font" ,14)->plaintext;
-					echo $type 		= $element->find("tr/td[2]/font" ,16); 
+					echo $type 		= $element->find("tr/td[2]/font" ,16)->plaintext; 
 					echo $NewLink;
 					
 				}
