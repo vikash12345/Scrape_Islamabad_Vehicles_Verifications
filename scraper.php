@@ -40,6 +40,8 @@
 			{
 				$NewLink	=	$url . $Alpha[$outterloop] . '&Y=' . $innerloop;
 				$html 		= file_get_html($NewLink);
+										 echo $reg_no 		= $element->find("tr/td[2]/font" ,1)->plaintext;
+
 				foreach($html->find("/html/body/div/table/tbody/tr[1]/td/form/table/tbody/tr[7]/td/table/tbody") as $element)
 				{
 
@@ -57,7 +59,7 @@
 					
 						if($reg_no != null)
 						{	
-								echo "$reg_no---";
+								
 								scraperwiki::save_sqlite(array('name'), array('name' => $reg_no , 'regdate' => $reg_date, 'maker' => $maker, 'model' => $model, 'chas' => $chassis_no, 'engine' => $engine_no, 'owner' => $owner, 'sw' => $sw, 'type' => $type, 'link' => $NewLink));
 
 						}
