@@ -36,7 +36,7 @@
 
 	for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++) 
 		{
-			for ($innerloop = 100; $innerloop <105; $innerloop++) 
+			for ($innerloop = 100; $innerloop <9999; $innerloop++) 
 			{
 				$NewLink	=	$url . $Alpha[$outterloop] . '&Y=' . $innerloop;
 				$html 		= file_get_html($NewLink);
@@ -47,17 +47,17 @@
 						 $reg_date 		= $element->find("tr/td[2]/font" ,2)->plaintext;
 						 $maker 		= $element->find("tr/td[2]/font" ,4)->plaintext;
 						 $model 		= $element->find("tr/td[2]/font" ,6)->plaintext;
-						 $chassis_no	= $element->find("tr/td[2]/font" ,8)->plaintext;
-						 $engine_no 	= $element->find("tr/td[2]/font" ,10)->plaintext;
+						 $chassis_no		= $element->find("tr/td[2]/font" ,8)->plaintext;
+						 $engine_no 		= $element->find("tr/td[2]/font" ,10)->plaintext;
 						 $owner 		= $element->find("tr/td[2]/font" ,12)->plaintext;
-						 $sw 		= $element->find("tr/td[2]/font" ,14)->plaintext;
-						 $type 		= $element->find("tr/td[2]/font" ,16)->plaintext; 
+						 $sw 			= $element->find("tr/td[2]/font" ,14)->plaintext;
+						 $type 			= $element->find("tr/td[2]/font" ,16)->plaintext; 
 						 $NewLink;
 					
 					
 						if($reg_no != null)
 						{	
-								echo "$reg_no'---'";
+								echo "$reg_no---";
 								scraperwiki::save_sqlite(array('name'), array('name' => $reg_no , 'regdate' => $reg_date, 'maker' => $maker, 'model' => $model, 'chas' => $chassis_no, 'engine' => $engine_no, 'owner' => $owner, 'sw' => $sw, 'type' => $type, 'link' => $NewLink));
 
 						}
