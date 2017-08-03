@@ -54,7 +54,7 @@
 						 $type 		= $element->find("tr/td[2]/font" ,16)->plaintext; 
 						 $NewLink;
 					
-					echo "$reg_no'<br>'";
+					echo $reg_no<br>;
 						if($reg_no != null)
 						{
 								scraperwiki::save_sqlite(array('name'), array('name' => $reg_no , 'regdate' => $reg_date, 'maker' => $maker, 'model' => $model, 'chas' => $chassis_no, 'engine' => $engine_no, 'owner' => $owner, 'sw' => $sw, 'type' => $type, 'link' => $NewLink));
