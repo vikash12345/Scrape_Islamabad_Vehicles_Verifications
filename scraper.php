@@ -63,7 +63,7 @@
 				}
 			}
 		
-		scraperwiki::save_sqlite(array('Vechiles'), array('regno' => '$reg_no ', 'regdate' => '$reg_date', 'maker' => '$maker', 'model' => '$model', 'chas' => '$chassis_no', 'engine' => '$engine_no', 'owner' => 'echo $owner', 'sw' => '$sw', 'type' => '$type', 'link' => '$NewLink'));
+		scraperwiki::save_sqlite(array('Vechiles'), array('regno' => '$reg_no ', 'regdate' => '$reg_date', 'maker' => '$maker', 'model' => '$model', 'chas' => '$chassis_no', 'engine' => '$engine_no', 'owner' => '$owner', 'sw' => '$sw', 'type' => '$type', 'link' => '$NewLink'));
 
 	}
 					
