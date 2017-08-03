@@ -26,7 +26,6 @@
 // called "data".3
 
 require 'scraperwiki.php';
-require "simple_html_dom.php";
 require 'scraperwiki/simple_html_dom.php';
 
 
