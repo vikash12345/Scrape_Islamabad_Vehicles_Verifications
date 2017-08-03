@@ -43,24 +43,22 @@
 				foreach($html->find("/html/body/div/table/tbody/tr[1]/td/form/table/tbody/tr[7]/td/table/tbody") as $element)
 				{
 
-					if($element)
-					{
 						echo $reg_no 		= $element->find("tr/td[2]/font" ,1)->plaintext;
-						echo $reg_date 		= $element->find("tr/td[2]/font" ,2)->plaintext;
-						echo $maker 		= $element->find("tr/td[2]/font" ,4)->plaintext;
-						echo $model 		= $element->find("tr/td[2]/font" ,6)->plaintext;
-						echo $chassis_no	= $element->find("tr/td[2]/font" ,8)->plaintext;
-						echo $engine_no 	= $element->find("tr/td[2]/font" ,10)->plaintext;
-						echo $owner 		= $element->find("tr/td[2]/font" ,12)->plaintext;
-						echo $sw 		= $element->find("tr/td[2]/font" ,14)->plaintext;
-						echo $type 		= $element->find("tr/td[2]/font" ,16)->plaintext; 
-						echo $NewLink;
+						 $reg_date 		= $element->find("tr/td[2]/font" ,2)->plaintext;
+						 $maker 		= $element->find("tr/td[2]/font" ,4)->plaintext;
+						 $model 		= $element->find("tr/td[2]/font" ,6)->plaintext;
+						 $chassis_no	= $element->find("tr/td[2]/font" ,8)->plaintext;
+						 $engine_no 	= $element->find("tr/td[2]/font" ,10)->plaintext;
+						 $owner 		= $element->find("tr/td[2]/font" ,12)->plaintext;
+						 $sw 		= $element->find("tr/td[2]/font" ,14)->plaintext;
+						 $type 		= $element->find("tr/td[2]/font" ,16)->plaintext; 
+						 $NewLink;
 						if($reg_no != null)
 						{
 								scraperwiki::save_sqlite(array('name'), array('name' => $reg_no , 'regdate' => $reg_date, 'maker' => $maker, 'model' => $model, 'chas' => $chassis_no, 'engine' => $engine_no, 'owner' => $owner, 'sw' => $sw, 'type' => $type, 'link' => $NewLink));
 
 						}
-					}
+					
 
 					
 					
