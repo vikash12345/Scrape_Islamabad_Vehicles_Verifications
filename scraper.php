@@ -45,18 +45,20 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 
 				if($element)
 				{
-					echo $reg_no 		= $element->find("tr/td[2]/font" ,1).text;
-					echo $reg_date 		= $element->find("tr/td[2]/font" ,2).text;
-					echo $maker 		= $element->find("tr/td[2]/font" ,4).text;
-					echo $model 		= $element->find("tr/td[2]/font" ,6).text;
-					echo $chassis_no	= $element->find("tr/td[2]/font" ,8).text;
-					echo $engine_no 	= $element->find("tr/td[2]/font" ,10).text;
-					echo $owner 		= $element->find("tr/td[2]/font" ,12).text;
-					echo $sw 		= $element->find("tr/td[2]/font" ,14).text;
-					echo $type 		= $element->find("tr/td[2]/font" ,16).text; 
+					echo $reg_no 		= $element->find("tr/td[2]/font" ,1)->plaintext;
+					echo $reg_date 		= $element->find("tr/td[2]/font" ,2)->plaintext;
+					echo $maker 		= $element->find("tr/td[2]/font" ,4)->plaintext;
+					echo $model 		= $element->find("tr/td[2]/font" ,6)->plaintext;
+					echo $chassis_no	= $element->find("tr/td[2]/font" ,8)->plaintext;
+					echo $engine_no 	= $element->find("tr/td[2]/font" ,10)->plaintext;
+					echo $owner 		= $element->find("tr/td[2]/font" ,12)->plaintext;
+					echo $sw 		= $element->find("tr/td[2]/font" ,14)->plaintext;
+					echo $type 		= $element->find("tr/td[2]/font" ,16); 
 					echo $NewLink;
 					
 				}
+				
+				
 			}
 			
 		}
