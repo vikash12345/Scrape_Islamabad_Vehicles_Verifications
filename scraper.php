@@ -36,7 +36,7 @@
 
 	for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++) 
 		{
-			for ($innerloop = 102; $innerloop <103; $innerloop++) 
+			for ($innerloop = 102; $innerloop <110; $innerloop++) 
 			{
 				$NewLink	=	$url . $Alpha[$outterloop] . '&Y=' . $innerloop;
 				$html 		= file_get_html($NewLink);
