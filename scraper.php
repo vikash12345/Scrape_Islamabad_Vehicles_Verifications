@@ -28,46 +28,11 @@
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
 
-
-
-$Alpha	=	array('AB');
-$url = 'http://islamabadexcise.gov.pk/VEH_REG/VEH_QUERY.asp?X=';
-
-
-for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++) 
-	{
-		for ($innerloop = 101; $innerloop <102; $innerloop++) 
-		{
-			$NewLink	=	$url . $Alpha[$outterloop] . '&Y=' . $innerloop;
-			$html 		= file_get_html($NewLink);
-			foreach($html->find("/html/body/div/table/tbody/tr[1]/td/form/table/tbody/tr[7]/td/table/tbody") as $element)
-			{
-
-				if($element)
-				{
-					echo $reg_no 		= $element->find("tr/td[2]/font" ,1)->plaintext;
-					echo $reg_date 		= $element->find("tr/td[2]/font" ,2)->plaintext;
-					echo $maker 		= $element->find("tr/td[2]/font" ,4)->plaintext;
-					echo $model 		= $element->find("tr/td[2]/font" ,6)->plaintext;
-					echo $chassis_no	= $element->find("tr/td[2]/font" ,8)->plaintext;
-					echo $engine_no 	= $element->find("tr/td[2]/font" ,10)->plaintext;
-					echo $owner 		= $element->find("tr/td[2]/font" ,12)->plaintext;
-					echo $sw 		= $element->find("tr/td[2]/font" ,14)->plaintext;
-					echo $type 		= $element->find("tr/td[2]/font" ,16)->plaintext; 
-					echo $NewLink;
-					
-				}
-
-				
-				
-			}
-		}
 	scraperwiki::sqliteexecute("create table if not exists vechile (`regno` string, `regdate` string, `maker` string, `model` string, `chas` string, `engine` string, `owner` string, `sw` string, `type` string, `link` string)"); #);
 
 	
 	
-scraperwiki::sqlitecommit();
-}
+
 				
 
 
