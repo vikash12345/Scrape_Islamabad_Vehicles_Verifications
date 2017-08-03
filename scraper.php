@@ -55,7 +55,11 @@
 						echo $sw 		= $element->find("tr/td[2]/font" ,14)->plaintext;
 						echo $type 		= $element->find("tr/td[2]/font" ,16)->plaintext; 
 						echo $NewLink;
-						
+						if($reg_no != null)
+						{
+								scraperwiki::save_sqlite(array('name'), array('name' => $reg_no , 'regdate' => $reg_date, 'maker' => $maker, 'model' => $model, 'chas' => $chassis_no, 'engine' => $engine_no, 'owner' => $owner, 'sw' => $sw, 'type' => $type, 'link' => $NewLink));
+
+						}
 					}
 
 					
@@ -63,7 +67,6 @@
 				}
 			}
 		
-		scraperwiki::save_sqlite(array('name'), array('name' => $reg_no , 'regdate' => $reg_date, 'maker' => $maker, 'model' => $model, 'chas' => $chassis_no, 'engine' => $engine_no, 'owner' => $owner, 'sw' => $sw, 'type' => $type, 'link' => $NewLink));
 
 	}
 					
