@@ -62,6 +62,8 @@ for ($outterloop = 0; $outterloop < sizeof($Alpha); $outterloop++)
 				
 				
 			}
+		}
+}
 				
 
 
