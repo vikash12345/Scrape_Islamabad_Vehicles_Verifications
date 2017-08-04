@@ -45,7 +45,7 @@
 				foreach($html->find("/html/body/div/table/tbody/tr[1]/td/form/table/tbody/tr[7]/td/table/tbody") as $element)
 				{		
 					
-					if($element)
+					if(is_object($element))
 						{
 
 						 $reg_no 		= $element->find("tr/td[2]/font" ,1)->plaintext;
